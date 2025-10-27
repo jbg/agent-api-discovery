@@ -23,6 +23,19 @@ author:
    organization: Independent
    email: jasper@jasperhugo.com
 
+normative:
+  OAS:
+    title: "OpenAPI Specification v3.2.0"
+    date: 2025-09-19
+    target: https://spec.openapis.org/oas/v3.2.0.html
+    author:
+      org: OpenAPI Initiative
+
+informative:
+  MCP:
+    title: "Model Context Protocol"
+    target: https://modelcontextprotocol.io/
+
 --- abstract
 
 This document describes a method for AI agents to discover, understand, and authenticate to APIs by composing existing Internet standards. It proposes that the combination of api-catalog for discovery, OpenAPI for capability description and schema discovery, and OAuth 2.0 with its associated metadata specifications for authentication and authorization provides a robust, decentralized alternative to bespoke single-purpose protocols.
@@ -60,7 +73,7 @@ This three-stage approach fully addresses the requirements for AI agent-API inte
 
 # The Composable Approach
 
-## 1. Discovery with api-catalog
+## Discovery with api-catalog
 
 The first stage of agent-API interaction requires the agent to discover which APIs are available for a given task. api-catalog {{!RFC9727}} provides a standardized mechanism for this discovery process.
 
@@ -74,7 +87,7 @@ An agent implementing this discovery mechanism would:
 
 This approach enables agents to systematically discover APIs across the Web without requiring custom discovery protocols or vendor-specific mechanisms.
 
-## 2. Description with OpenAPI Specification
+## Description with OpenAPI Specification
 
 Once an agent has discovered an API through the catalog mechanism described in Section 1, it needs to understand the API's capabilities, parameters, and data structures. The OpenAPI Specification {{?OAS}} provides a standardized, machine-readable format for this purpose.
 
@@ -107,7 +120,7 @@ This approach scales well across different deployment scenarios:
 - **Incremental Updates**: Agents can refresh their understanding of APIs as specifications evolve
 - **Load Distribution**: No single point of failure in the discovery process
 
-## 3. Delegated Authorization with OAuth 2.0
+## Delegated Authorization with OAuth 2.0
 
 After discovering and understanding an API's capabilities, an agent must obtain authorization to access protected resources on behalf of a user. The OAuth 2.0 Authorization Framework {{!RFC6749}} provides a standardized mechanism for this delegated authorization, while Authorization Server Metadata {{!RFC8414}} enables agents to discover authorization server capabilities.
 
