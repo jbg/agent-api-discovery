@@ -79,7 +79,7 @@ The first stage of agent-API interaction requires the agent to discover which AP
 
 ### Agent Workflow
 
-An agent implementing this discovery mechanism would:
+An agent implementing this discovery mechanism SHOULD:
 
 1. **Direct Discovery**: Query `/.well-known/api-catalog` or use link relations to discover APIs available on target domains
 2. **Catalog Processing**: Parse the API catalog (in Linkset format {{!RFC9264}}) to extract API endpoints and metadata
@@ -101,7 +101,7 @@ While OpenAPI documents are typically served at conventional endpoints (such as 
 
 ### Agent Workflow
 
-An agent implementing this description mechanism would:
+An agent implementing this description mechanism SHOULD:
 
 1. **Fetch OpenAPI Document**: Retrieve the OpenAPI specification from the URL provided in the api-catalog
 2. **Parse Specification**: Process the document to extract API metadata
@@ -156,7 +156,7 @@ Agents implementing OAuth 2.0 MUST adhere to the security best practices outline
 
 ### Agent Workflow
 
-An agent implementing delegated authorization would:
+An agent implementing delegated authorization SHOULD:
 
 1. **Discover Authorization Server**: Fetch the authorization server metadata from `/.well-known/oauth-authorization-server`
 2. **Determine Grant Type**: Select the appropriate OAuth 2.0 grant type based on the agent's capabilities and deployment context
@@ -168,12 +168,12 @@ This standardized approach enables agents to securely obtain and use access toke
 
 ### Error Handling
 
-Agents implementing this approach should handle common failure scenarios:
+Agents implementing this approach SHOULD handle common failure scenarios:
 
 - **Discovery Failures**: If `/.well-known/api-catalog` is unavailable, agents MAY fall back to conventional OpenAPI discovery endpoints
-- **OpenAPI Parsing Errors**: Malformed or invalid OpenAPI documents should be handled gracefully with appropriate error reporting
-- **OAuth Flow Failures**: Authorization failures should be communicated clearly to users with guidance on resolution
-- **Protocol Errors**: Implementations should handle HTTP error responses and invalid protocol responses appropriately
+- **OpenAPI Parsing Errors**: Malformed or invalid OpenAPI documents SHOULD be handled gracefully with appropriate error reporting
+- **OAuth Flow Failures**: Authorization failures SHOULD be communicated clearly to users with guidance on resolution
+- **Protocol Errors**: Implementations SHOULD handle HTTP error responses and invalid protocol responses appropriately
 
 # Conventions and Definitions
 
@@ -181,7 +181,7 @@ Agents implementing this approach should handle common failure scenarios:
 
 # Security Considerations
 
-This approach relies on the security models of its constituent parts, primarily OAuth 2.0. Implementers MUST adhere to the security best practices outlined in the relevant specifications, including OAuth 2.0 for Native Apps {{!RFC8252}} and OAuth 2.0 Security Best Current Practice {{?I-D.ietf-oauth-security-topics}}. By leveraging these standards, this approach avoids introducing novel security vulnerabilities that a new protocol might create.
+This approach relies on the security models of its constituent parts, primarily OAuth 2.0. Implementers MUST adhere to the security best practices outlined in the relevant specifications, including OAuth 2.0 for Native Apps {{!RFC8252}} and OAuth 2.0 Security Best Current Practice {{!I-D.ietf-oauth-security-topics}}. By leveraging these standards, this approach avoids introducing novel security vulnerabilities that a new protocol might create.
 
 # IANA Considerations
 
