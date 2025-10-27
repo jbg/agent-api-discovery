@@ -155,7 +155,7 @@ Table of Contents
 
 2.1.1.  Agent Workflow
 
-   An agent implementing this discovery mechanism would:
+   An agent implementing this discovery mechanism SHOULD:
 
    1.  *Direct Discovery*: Query /.well-known/api-catalog or use link
        relations to discover APIs available on target domains
@@ -197,7 +197,7 @@ Table of Contents
 
 2.2.2.  Agent Workflow
 
-   An agent implementing this description mechanism would:
+   An agent implementing this description mechanism SHOULD:
 
    1.  *Fetch OpenAPI Document*: Retrieve the OpenAPI specification from
        the URL provided in the api-catalog
@@ -297,7 +297,7 @@ Table of Contents
 
 2.3.4.  Agent Workflow
 
-   An agent implementing delegated authorization would:
+   An agent implementing delegated authorization SHOULD:
 
    1.  *Discover Authorization Server*: Fetch the authorization server
        metadata from /.well-known/oauth-authorization-server
@@ -320,19 +320,19 @@ Table of Contents
 
 2.3.5.  Error Handling
 
-   Agents implementing this approach should handle common failure
+   Agents implementing this approach SHOULD handle common failure
    scenarios:
 
    *  *Discovery Failures*: If /.well-known/api-catalog is unavailable,
       agents MAY fall back to conventional OpenAPI discovery endpoints
 
    *  *OpenAPI Parsing Errors*: Malformed or invalid OpenAPI documents
-      should be handled gracefully with appropriate error reporting
+      SHOULD be handled gracefully with appropriate error reporting
 
-   *  *OAuth Flow Failures*: Authorization failures should be
+   *  *OAuth Flow Failures*: Authorization failures SHOULD be
       communicated clearly to users with guidance on resolution
 
-   *  *Protocol Errors*: Implementations should handle HTTP error
+   *  *Protocol Errors*: Implementations SHOULD handle HTTP error
       responses and invalid protocol responses appropriately
 
 3.  Conventions and Definitions
@@ -384,6 +384,14 @@ Table of Contents
               DOI 10.17487/RFC9264, July 2022,
               <https://www.rfc-editor.org/info/rfc9264>.
 
+   [I-D.ietf-oauth-security-topics]
+              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
+              "OAuth 2.0 Security Best Current Practice", Work in
+              Progress, Internet-Draft, draft-ietf-oauth-security-
+              topics-29, 3 June 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-
+              security-topics-29>.
+
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -401,14 +409,6 @@ Table of Contents
 
    [MCP]      "Model Context Protocol", n.d.,
               <https://modelcontextprotocol.io/>.
-
-   [I-D.ietf-oauth-security-topics]
-              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
-              "OAuth 2.0 Security Best Current Practice", Work in
-              Progress, Internet-Draft, draft-ietf-oauth-security-
-              topics-29, 3 June 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-
-              security-topics-29>.
 
 Acknowledgments
 

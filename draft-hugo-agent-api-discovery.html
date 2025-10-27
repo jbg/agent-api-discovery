@@ -1299,7 +1299,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
           <h4 id="name-agent-workflow">
 <a href="#section-2.1.1" class="section-number selfRef">2.1.1. </a><a href="#name-agent-workflow" class="section-name selfRef">Agent Workflow</a>
           </h4>
-<p id="section-2.1.1-1">An agent implementing this discovery mechanism would:<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1.1-1">An agent implementing this discovery mechanism <span class="bcp14">SHOULD</span>:<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1.1-2">
 <li id="section-2.1.1-2.1">
               <p id="section-2.1.1-2.1.1"><strong>Direct Discovery</strong>: Query <code>/.well-known/api-catalog</code> or use link relations to discover APIs available on target domains<a href="#section-2.1.1-2.1.1" class="pilcrow">¶</a></p>
@@ -1346,7 +1346,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
           <h4 id="name-agent-workflow-2">
 <a href="#section-2.2.2" class="section-number selfRef">2.2.2. </a><a href="#name-agent-workflow-2" class="section-name selfRef">Agent Workflow</a>
           </h4>
-<p id="section-2.2.2-1">An agent implementing this description mechanism would:<a href="#section-2.2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-1">An agent implementing this description mechanism <span class="bcp14">SHOULD</span>:<a href="#section-2.2.2-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.2.2-2">
 <li id="section-2.2.2-2.1">
               <p id="section-2.2.2-2.1.1"><strong>Fetch OpenAPI Document</strong>: Retrieve the OpenAPI specification from the URL provided in the api-catalog<a href="#section-2.2.2-2.1.1" class="pilcrow">¶</a></p>
@@ -1467,7 +1467,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
           <h4 id="name-agent-workflow-3">
 <a href="#section-2.3.4" class="section-number selfRef">2.3.4. </a><a href="#name-agent-workflow-3" class="section-name selfRef">Agent Workflow</a>
           </h4>
-<p id="section-2.3.4-1">An agent implementing delegated authorization would:<a href="#section-2.3.4-1" class="pilcrow">¶</a></p>
+<p id="section-2.3.4-1">An agent implementing delegated authorization <span class="bcp14">SHOULD</span>:<a href="#section-2.3.4-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.3.4-2">
 <li id="section-2.3.4-2.1">
               <p id="section-2.3.4-2.1.1"><strong>Discover Authorization Server</strong>: Fetch the authorization server metadata from <code>/.well-known/oauth-authorization-server</code><a href="#section-2.3.4-2.1.1" class="pilcrow">¶</a></p>
@@ -1493,19 +1493,19 @@ svg :is([fill="white"], [fill^="#fff"]) {
           <h4 id="name-error-handling">
 <a href="#section-2.3.5" class="section-number selfRef">2.3.5. </a><a href="#name-error-handling" class="section-name selfRef">Error Handling</a>
           </h4>
-<p id="section-2.3.5-1">Agents implementing this approach should handle common failure scenarios:<a href="#section-2.3.5-1" class="pilcrow">¶</a></p>
+<p id="section-2.3.5-1">Agents implementing this approach <span class="bcp14">SHOULD</span> handle common failure scenarios:<a href="#section-2.3.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.3.5-2.1">
               <p id="section-2.3.5-2.1.1"><strong>Discovery Failures</strong>: If <code>/.well-known/api-catalog</code> is unavailable, agents <span class="bcp14">MAY</span> fall back to conventional OpenAPI discovery endpoints<a href="#section-2.3.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-2.3.5-2.2">
-              <p id="section-2.3.5-2.2.1"><strong>OpenAPI Parsing Errors</strong>: Malformed or invalid OpenAPI documents should be handled gracefully with appropriate error reporting<a href="#section-2.3.5-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-2.3.5-2.2.1"><strong>OpenAPI Parsing Errors</strong>: Malformed or invalid OpenAPI documents <span class="bcp14">SHOULD</span> be handled gracefully with appropriate error reporting<a href="#section-2.3.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-2.3.5-2.3">
-              <p id="section-2.3.5-2.3.1"><strong>OAuth Flow Failures</strong>: Authorization failures should be communicated clearly to users with guidance on resolution<a href="#section-2.3.5-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-2.3.5-2.3.1"><strong>OAuth Flow Failures</strong>: Authorization failures <span class="bcp14">SHOULD</span> be communicated clearly to users with guidance on resolution<a href="#section-2.3.5-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-2.3.5-2.4">
-              <p id="section-2.3.5-2.4.1"><strong>Protocol Errors</strong>: Implementations should handle HTTP error responses and invalid protocol responses appropriately<a href="#section-2.3.5-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-2.3.5-2.4.1"><strong>Protocol Errors</strong>: Implementations <span class="bcp14">SHOULD</span> handle HTTP error responses and invalid protocol responses appropriately<a href="#section-2.3.5-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1572,6 +1572,10 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
         <dd>
 <span class="refAuthor">Wilde, E.</span> and <span class="refAuthor">H. Van de Sompel</span>, <span class="refTitle">"Linkset: Media Types and a Link Relation Type for Link Sets"</span>, <span class="seriesInfo">RFC 9264</span>, <span class="seriesInfo">DOI 10.17487/RFC9264</span>, <time datetime="2022-07" class="refDate">July 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc9264">https://www.rfc-editor.org/info/rfc9264</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="I-D.ietf-oauth-security-topics">[I-D.ietf-oauth-security-topics]</dt>
+        <dd>
+<span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Labunets, A.</span>, and <span class="refAuthor">D. Fett</span>, <span class="refTitle">"OAuth 2.0 Security Best Current Practice"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-oauth-security-topics-29</span>, <time datetime="2024-06-03" class="refDate">3 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
         <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;</span>. </dd>
@@ -1594,12 +1598,8 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
         </h3>
 <dl class="references">
 <dt id="MCP">[MCP]</dt>
-        <dd>
-<span class="refTitle">"Model Context Protocol"</span>, <span>n.d.</span>, <span>&lt;<a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-oauth-security-topics">[I-D.ietf-oauth-security-topics]</dt>
       <dd>
-<span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Labunets, A.</span>, and <span class="refAuthor">D. Fett</span>, <span class="refTitle">"OAuth 2.0 Security Best Current Practice"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-oauth-security-topics-29</span>, <time datetime="2024-06-03" class="refDate">3 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29</a>&gt;</span>. </dd>
+<span class="refTitle">"Model Context Protocol"</span>, <span>n.d.</span>, <span>&lt;<a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
