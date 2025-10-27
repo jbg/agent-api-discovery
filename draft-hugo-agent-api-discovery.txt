@@ -74,13 +74,11 @@ Table of Contents
      2.2.  Description with OpenAPI Specification
        2.2.1.  OpenAPI Document Discovery
        2.2.2.  Agent Workflow
-       2.2.3.  Scalability Considerations
      2.3.  Delegated Authorization with OAuth 2.0
        2.3.1.  Authorization Server Discovery
        2.3.2.  OAuth 2.0 Grant Types for Agents
-       2.3.3.  Security Considerations
-       2.3.4.  Agent Workflow
-       2.3.5.  Error Handling
+       2.3.3.  Agent Workflow
+     2.4.  Error Handling
    3.  Conventions and Definitions
    4.  Security Considerations
    5.  IANA Considerations
@@ -218,22 +216,6 @@ Table of Contents
    and integrate with APIs without requiring custom integration code or
    vendor-specific documentation formats.
 
-2.2.3.  Scalability Considerations
-
-   This approach scales well across different deployment scenarios:
-
-   *  *Distributed Discovery*: Agents can discover APIs across multiple
-      domains without centralized coordination
-
-   *  *Caching*: OpenAPI specifications and api-catalog responses can be
-      cached to reduce discovery overhead
-
-   *  *Incremental Updates*: Agents can refresh their understanding of
-      APIs as specifications evolve
-
-   *  *Load Distribution*: No single point of failure in the discovery
-      process
-
 2.3.  Delegated Authorization with OAuth 2.0
 
    After discovering and understanding an API's capabilities, an agent
@@ -281,21 +263,7 @@ Table of Contents
    The choice of grant type depends on the agent's deployment context
    and the level of user interaction required.
 
-2.3.3.  Security Considerations
-
-   Agents implementing OAuth 2.0 MUST adhere to the security best
-   practices outlined in the OAuth 2.0 Security Best Current Practice
-   [I-D.ietf-oauth-security-topics].  Key considerations include:
-
-   *  Using HTTPS for all OAuth 2.0 communications
-
-   *  Implementing proper state parameter validation
-
-   *  Securing client credentials and access tokens
-
-   *  Implementing appropriate token refresh mechanisms
-
-2.3.4.  Agent Workflow
+2.3.3.  Agent Workflow
 
    An agent implementing delegated authorization SHOULD:
 
@@ -318,7 +286,7 @@ Table of Contents
    access tokens without requiring custom authentication protocols or
    vendor-specific authorization mechanisms.
 
-2.3.5.  Error Handling
+2.4.  Error Handling
 
    Agents implementing this approach SHOULD handle common failure
    scenarios:
@@ -384,14 +352,6 @@ Table of Contents
               DOI 10.17487/RFC9264, July 2022,
               <https://www.rfc-editor.org/info/rfc9264>.
 
-   [I-D.ietf-oauth-security-topics]
-              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
-              "OAuth 2.0 Security Best Current Practice", Work in
-              Progress, Internet-Draft, draft-ietf-oauth-security-
-              topics-29, 3 June 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-
-              security-topics-29>.
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -404,6 +364,14 @@ Table of Contents
    [RFC8252]  Denniss, W. and J. Bradley, "OAuth 2.0 for Native Apps",
               BCP 212, RFC 8252, DOI 10.17487/RFC8252, October 2017,
               <https://www.rfc-editor.org/info/rfc8252>.
+
+   [I-D.ietf-oauth-security-topics]
+              Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
+              "OAuth 2.0 Security Best Current Practice", Work in
+              Progress, Internet-Draft, draft-ietf-oauth-security-
+              topics-29, 3 June 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-
+              security-topics-29>.
 
 6.2.  Informative References
 

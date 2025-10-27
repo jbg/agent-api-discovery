@@ -1174,9 +1174,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.2">
                     <p id="section-toc.1-1.2.2.2.2.2.1"><a href="#section-2.2.2" class="auto internal xref">2.2.2</a>.  <a href="#name-agent-workflow-2" class="internal xref">Agent Workflow</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.3">
-                    <p id="section-toc.1-1.2.2.2.2.3.1"><a href="#section-2.2.3" class="auto internal xref">2.2.3</a>.  <a href="#name-scalability-considerations" class="internal xref">Scalability Considerations</a></p>
-</li>
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.3">
@@ -1189,15 +1186,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
                     <p id="section-toc.1-1.2.2.3.2.2.1"><a href="#section-2.3.2" class="auto internal xref">2.3.2</a>.  <a href="#name-oauth-20-grant-types-for-ag" class="internal xref">OAuth 2.0 Grant Types for Agents</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.3.2.3">
-                    <p id="section-toc.1-1.2.2.3.2.3.1"><a href="#section-2.3.3" class="auto internal xref">2.3.3</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.3.2.4">
-                    <p id="section-toc.1-1.2.2.3.2.4.1"><a href="#section-2.3.4" class="auto internal xref">2.3.4</a>.  <a href="#name-agent-workflow-3" class="internal xref">Agent Workflow</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.3.2.5">
-                    <p id="section-toc.1-1.2.2.3.2.5.1"><a href="#section-2.3.5" class="auto internal xref">2.3.5</a>.  <a href="#name-error-handling" class="internal xref">Error Handling</a></p>
+                    <p id="section-toc.1-1.2.2.3.2.3.1"><a href="#section-2.3.3" class="auto internal xref">2.3.3</a>.  <a href="#name-agent-workflow-3" class="internal xref">Agent Workflow</a></p>
 </li>
                 </ul>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.4">
+                <p id="section-toc.1-1.2.2.4.1"><a href="#section-2.4" class="auto internal xref">2.4</a>.  <a href="#name-error-handling" class="internal xref">Error Handling</a></p>
 </li>
             </ul>
 </li>
@@ -1205,7 +1199,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-security-considerations-2" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
@@ -1367,28 +1361,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-2.2.2-3">This standardized approach enables agents to dynamically understand and integrate with APIs without requiring custom integration code or vendor-specific documentation formats.<a href="#section-2.2.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="scalability-considerations">
-<section id="section-2.2.3">
-          <h4 id="name-scalability-considerations">
-<a href="#section-2.2.3" class="section-number selfRef">2.2.3. </a><a href="#name-scalability-considerations" class="section-name selfRef">Scalability Considerations</a>
-          </h4>
-<p id="section-2.2.3-1">This approach scales well across different deployment scenarios:<a href="#section-2.2.3-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-2.2.3-2.1">
-              <p id="section-2.2.3-2.1.1"><strong>Distributed Discovery</strong>: Agents can discover APIs across multiple domains without centralized coordination<a href="#section-2.2.3-2.1.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-2.2.3-2.2">
-              <p id="section-2.2.3-2.2.1"><strong>Caching</strong>: OpenAPI specifications and api-catalog responses can be cached to reduce discovery overhead<a href="#section-2.2.3-2.2.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-2.2.3-2.3">
-              <p id="section-2.2.3-2.3.1"><strong>Incremental Updates</strong>: Agents can refresh their understanding of APIs as specifications evolve<a href="#section-2.2.3-2.3.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-2.2.3-2.4">
-              <p id="section-2.2.3-2.4.1"><strong>Load Distribution</strong>: No single point of failure in the discovery process<a href="#section-2.2.3-2.4.1" class="pilcrow">¶</a></p>
-</li>
-          </ul>
-</section>
-</div>
 </section>
 </div>
 <div id="delegated-authorization-with-oauth-20">
@@ -1440,76 +1412,54 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-2.3.2-3">The choice of grant type depends on the agent's deployment context and the level of user interaction required.<a href="#section-2.3.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="security-considerations">
-<section id="section-2.3.3">
-          <h4 id="name-security-considerations">
-<a href="#section-2.3.3" class="section-number selfRef">2.3.3. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
-          </h4>
-<p id="section-2.3.3-1">Agents implementing OAuth 2.0 <span class="bcp14">MUST</span> adhere to the security best practices outlined in the OAuth 2.0 Security Best Current Practice <span>[<a href="#I-D.ietf-oauth-security-topics" class="cite xref">I-D.ietf-oauth-security-topics</a>]</span>. Key considerations include:<a href="#section-2.3.3-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-2.3.3-2.1">
-              <p id="section-2.3.3-2.1.1">Using HTTPS for all OAuth 2.0 communications<a href="#section-2.3.3-2.1.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-2.3.3-2.2">
-              <p id="section-2.3.3-2.2.1">Implementing proper state parameter validation<a href="#section-2.3.3-2.2.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-2.3.3-2.3">
-              <p id="section-2.3.3-2.3.1">Securing client credentials and access tokens<a href="#section-2.3.3-2.3.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-2.3.3-2.4">
-              <p id="section-2.3.3-2.4.1">Implementing appropriate token refresh mechanisms<a href="#section-2.3.3-2.4.1" class="pilcrow">¶</a></p>
-</li>
-          </ul>
-</section>
-</div>
 <div id="agent-workflow-2">
-<section id="section-2.3.4">
+<section id="section-2.3.3">
           <h4 id="name-agent-workflow-3">
-<a href="#section-2.3.4" class="section-number selfRef">2.3.4. </a><a href="#name-agent-workflow-3" class="section-name selfRef">Agent Workflow</a>
+<a href="#section-2.3.3" class="section-number selfRef">2.3.3. </a><a href="#name-agent-workflow-3" class="section-name selfRef">Agent Workflow</a>
           </h4>
-<p id="section-2.3.4-1">An agent implementing delegated authorization <span class="bcp14">SHOULD</span>:<a href="#section-2.3.4-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-2.3.4-2">
-<li id="section-2.3.4-2.1">
-              <p id="section-2.3.4-2.1.1"><strong>Discover Authorization Server</strong>: Fetch the authorization server metadata from <code>/.well-known/oauth-authorization-server</code><a href="#section-2.3.4-2.1.1" class="pilcrow">¶</a></p>
+<p id="section-2.3.3-1">An agent implementing delegated authorization <span class="bcp14">SHOULD</span>:<a href="#section-2.3.3-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-2.3.3-2">
+<li id="section-2.3.3-2.1">
+              <p id="section-2.3.3-2.1.1"><strong>Discover Authorization Server</strong>: Fetch the authorization server metadata from <code>/.well-known/oauth-authorization-server</code><a href="#section-2.3.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-2.3.4-2.2">
-              <p id="section-2.3.4-2.2.1"><strong>Determine Grant Type</strong>: Select the appropriate OAuth 2.0 grant type based on the agent's capabilities and deployment context<a href="#section-2.3.4-2.2.1" class="pilcrow">¶</a></p>
+            <li id="section-2.3.3-2.2">
+              <p id="section-2.3.3-2.2.1"><strong>Determine Grant Type</strong>: Select the appropriate OAuth 2.0 grant type based on the agent's capabilities and deployment context<a href="#section-2.3.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-2.3.4-2.3">
-              <p id="section-2.3.4-2.3.1"><strong>Initiate Authorization Flow</strong>: Follow the standard OAuth 2.0 flow for the selected grant type to obtain an access token<a href="#section-2.3.4-2.3.1" class="pilcrow">¶</a></p>
+            <li id="section-2.3.3-2.3">
+              <p id="section-2.3.3-2.3.1"><strong>Initiate Authorization Flow</strong>: Follow the standard OAuth 2.0 flow for the selected grant type to obtain an access token<a href="#section-2.3.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-2.3.4-2.4">
-              <p id="section-2.3.4-2.4.1"><strong>Use Access Token</strong>: Include the access token in API requests to access protected resources<a href="#section-2.3.4-2.4.1" class="pilcrow">¶</a></p>
+            <li id="section-2.3.3-2.4">
+              <p id="section-2.3.3-2.4.1"><strong>Use Access Token</strong>: Include the access token in API requests to access protected resources<a href="#section-2.3.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-2.3.4-2.5">
-              <p id="section-2.3.4-2.5.1"><strong>Handle Token Refresh</strong>: Implement token refresh mechanisms to maintain access when tokens expire<a href="#section-2.3.4-2.5.1" class="pilcrow">¶</a></p>
+            <li id="section-2.3.3-2.5">
+              <p id="section-2.3.3-2.5.1"><strong>Handle Token Refresh</strong>: Implement token refresh mechanisms to maintain access when tokens expire<a href="#section-2.3.3-2.5.1" class="pilcrow">¶</a></p>
 </li>
           </ol>
-<p id="section-2.3.4-3">This standardized approach enables agents to securely obtain and use access tokens without requiring custom authentication protocols or vendor-specific authorization mechanisms.<a href="#section-2.3.4-3" class="pilcrow">¶</a></p>
+<p id="section-2.3.3-3">This standardized approach enables agents to securely obtain and use access tokens without requiring custom authentication protocols or vendor-specific authorization mechanisms.<a href="#section-2.3.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="error-handling">
-<section id="section-2.3.5">
-          <h4 id="name-error-handling">
-<a href="#section-2.3.5" class="section-number selfRef">2.3.5. </a><a href="#name-error-handling" class="section-name selfRef">Error Handling</a>
-          </h4>
-<p id="section-2.3.5-1">Agents implementing this approach <span class="bcp14">SHOULD</span> handle common failure scenarios:<a href="#section-2.3.5-1" class="pilcrow">¶</a></p>
+<section id="section-2.4">
+        <h3 id="name-error-handling">
+<a href="#section-2.4" class="section-number selfRef">2.4. </a><a href="#name-error-handling" class="section-name selfRef">Error Handling</a>
+        </h3>
+<p id="section-2.4-1">Agents implementing this approach <span class="bcp14">SHOULD</span> handle common failure scenarios:<a href="#section-2.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2.3.5-2.1">
-              <p id="section-2.3.5-2.1.1"><strong>Discovery Failures</strong>: If <code>/.well-known/api-catalog</code> is unavailable, agents <span class="bcp14">MAY</span> fall back to conventional OpenAPI discovery endpoints<a href="#section-2.3.5-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-2.4-2.1">
+            <p id="section-2.4-2.1.1"><strong>Discovery Failures</strong>: If <code>/.well-known/api-catalog</code> is unavailable, agents <span class="bcp14">MAY</span> fall back to conventional OpenAPI discovery endpoints<a href="#section-2.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2.3.5-2.2">
-              <p id="section-2.3.5-2.2.1"><strong>OpenAPI Parsing Errors</strong>: Malformed or invalid OpenAPI documents <span class="bcp14">SHOULD</span> be handled gracefully with appropriate error reporting<a href="#section-2.3.5-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-2.4-2.2">
+            <p id="section-2.4-2.2.1"><strong>OpenAPI Parsing Errors</strong>: Malformed or invalid OpenAPI documents <span class="bcp14">SHOULD</span> be handled gracefully with appropriate error reporting<a href="#section-2.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2.3.5-2.3">
-              <p id="section-2.3.5-2.3.1"><strong>OAuth Flow Failures</strong>: Authorization failures <span class="bcp14">SHOULD</span> be communicated clearly to users with guidance on resolution<a href="#section-2.3.5-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-2.4-2.3">
+            <p id="section-2.4-2.3.1"><strong>OAuth Flow Failures</strong>: Authorization failures <span class="bcp14">SHOULD</span> be communicated clearly to users with guidance on resolution<a href="#section-2.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2.3.5-2.4">
-              <p id="section-2.3.5-2.4.1"><strong>Protocol Errors</strong>: Implementations <span class="bcp14">SHOULD</span> handle HTTP error responses and invalid protocol responses appropriately<a href="#section-2.3.5-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-2.4-2.4">
+            <p id="section-2.4-2.4.1"><strong>Protocol Errors</strong>: Implementations <span class="bcp14">SHOULD</span> handle HTTP error responses and invalid protocol responses appropriately<a href="#section-2.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
-          </ul>
-</section>
-</div>
+        </ul>
 </section>
 </div>
 </section>
@@ -1525,10 +1475,10 @@ described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</s
 appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="security-considerations-1">
+<div id="security-considerations">
 <section id="section-4">
-      <h2 id="name-security-considerations-2">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations-2" class="section-name selfRef">Security Considerations</a>
+      <h2 id="name-security-considerations">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
 <p id="section-4-1">This approach relies on the security models of its constituent parts, primarily OAuth 2.0. Implementers <span class="bcp14">MUST</span> adhere to the security best practices outlined in the relevant specifications, including OAuth 2.0 for Native Apps <span>[<a href="#RFC8252" class="cite xref">RFC8252</a>]</span> and OAuth 2.0 Security Best Current Practice <span>[<a href="#I-D.ietf-oauth-security-topics" class="cite xref">I-D.ietf-oauth-security-topics</a>]</span>. By leveraging these standards, this approach avoids introducing novel security vulnerabilities that a new protocol might create.<a href="#section-4-1" class="pilcrow">¶</a></p>
 </section>
@@ -1572,10 +1522,6 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
         <dd>
 <span class="refAuthor">Wilde, E.</span> and <span class="refAuthor">H. Van de Sompel</span>, <span class="refTitle">"Linkset: Media Types and a Link Relation Type for Link Sets"</span>, <span class="seriesInfo">RFC 9264</span>, <span class="seriesInfo">DOI 10.17487/RFC9264</span>, <time datetime="2022-07" class="refDate">July 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc9264">https://www.rfc-editor.org/info/rfc9264</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.ietf-oauth-security-topics">[I-D.ietf-oauth-security-topics]</dt>
-        <dd>
-<span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Labunets, A.</span>, and <span class="refAuthor">D. Fett</span>, <span class="refTitle">"OAuth 2.0 Security Best Current Practice"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-oauth-security-topics-29</span>, <time datetime="2024-06-03" class="refDate">3 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
         <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;</span>. </dd>
@@ -1585,8 +1531,12 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8252">[RFC8252]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Denniss, W.</span> and <span class="refAuthor">J. Bradley</span>, <span class="refTitle">"OAuth 2.0 for Native Apps"</span>, <span class="seriesInfo">BCP 212</span>, <span class="seriesInfo">RFC 8252</span>, <span class="seriesInfo">DOI 10.17487/RFC8252</span>, <time datetime="2017-10" class="refDate">October 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8252">https://www.rfc-editor.org/info/rfc8252</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-oauth-security-topics">[I-D.ietf-oauth-security-topics]</dt>
+      <dd>
+<span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Labunets, A.</span>, and <span class="refAuthor">D. Fett</span>, <span class="refTitle">"OAuth 2.0 Security Best Current Practice"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-oauth-security-topics-29</span>, <time datetime="2024-06-03" class="refDate">3 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29">https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-29</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
