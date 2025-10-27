@@ -111,15 +111,6 @@ An agent implementing this description mechanism SHOULD:
 
 This standardized approach enables agents to dynamically understand and integrate with APIs without requiring custom integration code or vendor-specific documentation formats.
 
-### Scalability Considerations
-
-This approach scales well across different deployment scenarios:
-
-- **Distributed Discovery**: Agents can discover APIs across multiple domains without centralized coordination
-- **Caching**: OpenAPI specifications and api-catalog responses can be cached to reduce discovery overhead
-- **Incremental Updates**: Agents can refresh their understanding of APIs as specifications evolve
-- **Load Distribution**: No single point of failure in the discovery process
-
 ## Delegated Authorization with OAuth 2.0
 
 After discovering and understanding an API's capabilities, an agent must obtain authorization to access protected resources on behalf of a user. The OAuth 2.0 Authorization Framework {{!RFC6749}} provides a standardized mechanism for this delegated authorization, while Authorization Server Metadata {{!RFC8414}} enables agents to discover authorization server capabilities.
@@ -145,15 +136,6 @@ Different OAuth 2.0 grant types are suitable for different agent deployment scen
 
 The choice of grant type depends on the agent's deployment context and the level of user interaction required.
 
-### Security Considerations
-
-Agents implementing OAuth 2.0 MUST adhere to the security best practices outlined in the OAuth 2.0 Security Best Current Practice {{?I-D.ietf-oauth-security-topics}}. Key considerations include:
-
-- Using HTTPS for all OAuth 2.0 communications
-- Implementing proper state parameter validation
-- Securing client credentials and access tokens
-- Implementing appropriate token refresh mechanisms
-
 ### Agent Workflow
 
 An agent implementing delegated authorization SHOULD:
@@ -166,7 +148,7 @@ An agent implementing delegated authorization SHOULD:
 
 This standardized approach enables agents to securely obtain and use access tokens without requiring custom authentication protocols or vendor-specific authorization mechanisms.
 
-### Error Handling
+## Error Handling
 
 Agents implementing this approach SHOULD handle common failure scenarios:
 
