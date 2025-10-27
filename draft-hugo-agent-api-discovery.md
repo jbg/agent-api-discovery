@@ -6,8 +6,8 @@ category: info
 docname: draft-hugo-agent-api-discovery-latest
 date: 2025-10-27
 ipr: trust200902
-area: Applications and Real-Time
-workgroup: Individual Submission
+# area: Applications and Real-Time
+# workgroup: Individual Submission
 
 keyword:
  - AI
