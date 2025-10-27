@@ -44,11 +44,11 @@ Agent-API interaction faces several challenges:
 - **Authentication Inconsistency**: Different APIs use various authentication mechanisms without standardized discovery
 - **Vendor Lock-in**: Proprietary solutions create dependencies on specific platforms or protocols
 
-While solutions like the Model Context Protocol (MCP) have gained popularity, they introduce new protocols and create additional complexity in the ecosystem. These challenges make it difficult for AI agents to dynamically interact with the diverse ecosystem of existing APIs, limiting their effectiveness and creating barriers to interoperability.
+While solutions like the Model Context Protocol {{?MCP}} have gained popularity, they introduce new protocols and create additional complexity in the ecosystem. These challenges make it difficult for AI agents to dynamically interact with the diverse ecosystem of existing APIs, limiting their effectiveness and creating barriers to interoperability.
 
 ## Solution Approach
 
-This document proposes a composable approach that leverages existing Internet standards rather than introducing new protocols. By combining api-catalog [[RFC9727]], OpenAPI [[OAS]], and OAuth 2.0 [[RFC6749]] with its discovery mechanisms [[RFC8414]], this approach provides a robust, decentralized solution that avoids vendor lock-in and reduces complexity.
+This document proposes a composable approach that leverages existing Internet standards rather than introducing new protocols. By combining api-catalog {{!RFC9727}}, OpenAPI {{?OAS}}, and OAuth 2.0 {{?RFC6749}} with its discovery mechanisms {{!RFC8414}}, this approach provides a robust, decentralized solution that avoids vendor lock-in and reduces complexity.
 
 The core capabilities required by an agent can be broken down into three stages:
 
@@ -62,21 +62,21 @@ This three-stage approach fully addresses the requirements for AI agent-API inte
 
 ## 1. Discovery with api-catalog
 
-The first stage of agent-API interaction requires the agent to discover which APIs are available for a given task. RFC 9727 "api-catalog: A Well-Known URI and Link Relation to Help Discovery of APIs" [[RFC9727]] provides a standardized mechanism for this discovery process.
+The first stage of agent-API interaction requires the agent to discover which APIs are available for a given task. api-catalog {{!RFC9727}} provides a standardized mechanism for this discovery process.
 
 ### Agent Workflow
 
 An agent implementing this discovery mechanism would:
 
 1. **Direct Discovery**: Query `/.well-known/api-catalog` or use link relations to discover APIs available on target domains
-2. **Catalog Processing**: Parse the API catalog (in Linkset format [[RFC9264]]) to extract API endpoints and metadata
+2. **Catalog Processing**: Parse the API catalog (in Linkset format {{!RFC9264}}) to extract API endpoints and metadata
 3. **Capability Matching**: Match discovered APIs against the agent's task requirements
 
 This approach enables agents to systematically discover APIs across the Web without requiring custom discovery protocols or vendor-specific mechanisms.
 
 ## 2. Description with OpenAPI Specification
 
-Once an agent has discovered an API through the catalog mechanism described in Section 1, it needs to understand the API's capabilities, parameters, and data structures. The OpenAPI Specification [[OAS]] provides a standardized, machine-readable format for this purpose.
+Once an agent has discovered an API through the catalog mechanism described in Section 1, it needs to understand the API's capabilities, parameters, and data structures. The OpenAPI Specification {{?OAS}} provides a standardized, machine-readable format for this purpose.
 
 ### OpenAPI Document Discovery
 
@@ -109,11 +109,11 @@ This approach scales well across different deployment scenarios:
 
 ## 3. Delegated Authorization with OAuth 2.0
 
-After discovering and understanding an API's capabilities, an agent must obtain authorization to access protected resources on behalf of a user. The OAuth 2.0 Authorization Framework [[RFC6749]] provides a standardized mechanism for this delegated authorization, while RFC 8414 [[RFC8414]] enables agents to discover authorization server capabilities.
+After discovering and understanding an API's capabilities, an agent must obtain authorization to access protected resources on behalf of a user. The OAuth 2.0 Authorization Framework {{!RFC6749}} provides a standardized mechanism for this delegated authorization, while Authorization Server Metadata {{!RFC8414}} enables agents to discover authorization server capabilities.
 
 ### Authorization Server Discovery
 
-RFC 8414 defines the OAuth 2.0 Authorization Server Metadata specification, which provides a well-known URI `/.well-known/oauth-authorization-server` for discovering authorization server configuration. This metadata includes:
+The OAuth 2.0 Authorization Server Metadata specification provides a well-known URI `/.well-known/oauth-authorization-server` for discovering authorization server configuration. This metadata includes:
 
 - Authorization and token endpoint URLs
 - Supported grant types and response types
@@ -134,7 +134,7 @@ The choice of grant type depends on the agent's deployment context and the level
 
 ### Security Considerations
 
-Agents implementing OAuth 2.0 MUST adhere to the security best practices outlined in the OAuth 2.0 Security Best Current Practice [[I-D.ietf-oauth-security-topics]]. Key considerations include:
+Agents implementing OAuth 2.0 MUST adhere to the security best practices outlined in the OAuth 2.0 Security Best Current Practice {{?I-D.ietf-oauth-security-topics}}. Key considerations include:
 
 - Using HTTPS for all OAuth 2.0 communications
 - Implementing proper state parameter validation
@@ -168,35 +168,11 @@ Agents implementing this approach should handle common failure scenarios:
 
 # Security Considerations
 
-This approach relies on the security models of its constituent parts, primarily OAuth 2.0. Implementers MUST adhere to the security best practices outlined in the relevant specifications, including "OAuth 2.0 for Native Apps" [[RFC8252]] and "OAuth 2.0 Security Best Current Practice" [[I-D.ietf-oauth-security-topics]]. By leveraging these well-vetted standards, this approach avoids introducing novel security vulnerabilities that a new protocol might create.
+This approach relies on the security models of its constituent parts, primarily OAuth 2.0. Implementers MUST adhere to the security best practices outlined in the relevant specifications, including OAuth 2.0 for Native Apps {{!RFC8252}} and OAuth 2.0 Security Best Current Practice {{?I-D.ietf-oauth-security-topics}}. By leveraging these standards, this approach avoids introducing novel security vulnerabilities that a new protocol might create.
 
 # IANA Considerations
 
 This document has no IANA actions.
-
-# References
-
-## Normative References
-
-[RFC2119] Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997, <https://www.rfc-editor.org/info/rfc2119>.
-
-[RFC6749] Hardt, D., Ed., "The OAuth 2.0 Authorization Framework", RFC 6749, DOI 10.17487/RFC6749, October 2012, <https://www.rfc-editor.org/info/rfc6749>.
-
-[RFC8174] Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-
-[RFC8252] Denniss, W. and J. Bradley, "OAuth 2.0 for Native Apps", BCP 212, RFC 8252, DOI 10.17487/RFC8252, October 2017, <https://www.rfc-editor.org/info/rfc8252>.
-
-[RFC8414] Jones, M., Sakimura, H., and J. Bradley, "OAuth 2.0 Authorization Server Metadata", RFC 8414, DOI 10.17487/RFC8414, June 2018, <https://www.rfc-editor.org/info/rfc8414>.
-
-[RFC9264] Nottingham, M., "The Linkset Format for Link Sets", RFC 9264, DOI 10.17487/RFC9264, July 2022, <https://www.rfc-editor.org/info/rfc9264>.
-
-[RFC9727] Nottingham, M., "api-catalog: A Well-Known URI and Link Relation to Help Discovery of APIs", RFC 9727, DOI 10.17487/RFC9727, January 2025, <https://www.rfc-editor.org/info/rfc9727>.
-
-## Informative References
-
-[I-D.ietf-oauth-security-topics] Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett, "OAuth 2.0 Security Best Current Practice", Work in Progress, Internet-Draft, draft-ietf-oauth-security-topics-27, 10 October 2024, <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-27>.
-
-[OAS] OpenAPI Initiative, "OpenAPI Specification", Version 3.1.0, 15 February 2021, <https://spec.openapis.org/oas/v3.1.0>.
 
 --- back
 
