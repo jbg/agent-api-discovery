@@ -23,12 +23,13 @@ author:
    organization: Independent
    email: jasper@jasperhugo.com
 
----
-# Abstract
+--- abstract
 
 This document describes a method for AI agents to discover, understand, and authenticate to APIs by composing existing Internet standards. It proposes that the combination of api-catalog for discovery, OpenAPI for capability description and schema discovery, and OAuth 2.0 with its associated metadata specifications for authentication and authorization provides a robust, decentralized alternative to bespoke single-purpose protocols.
 
 This approach avoids vendor lock-in, reduces complexity by reusing well-understood technologies, and promotes an open and interoperable ecosystem for AI agent interactions with the existing Web.
+
+--- middle
 
 # Introduction
 
@@ -56,10 +57,6 @@ The core capabilities required by an agent can be broken down into three stages:
 3. **Delegated Authorization**: Gaining secure, scoped access to the API on behalf of a user
 
 This three-stage approach fully addresses the requirements for AI agent-API interaction using well-established Internet standards.
-
-# Terminology
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [[RFC2119]] [[RFC8174]] when, and only when, they appear in all capitals, as shown here.
 
 # The Composable Approach
 
@@ -165,6 +162,10 @@ Agents implementing this approach should handle common failure scenarios:
 - **OAuth Flow Failures**: Authorization failures should be communicated clearly to users with guidance on resolution
 - **Protocol Errors**: Implementations should handle HTTP error responses and invalid protocol responses appropriately
 
+# Conventions and Definitions
+
+{::boilerplate bcp14-tagged}
+
 # Security Considerations
 
 This approach relies on the security models of its constituent parts, primarily OAuth 2.0. Implementers MUST adhere to the security best practices outlined in the relevant specifications, including "OAuth 2.0 for Native Apps" [[RFC8252]] and "OAuth 2.0 Security Best Current Practice" [[I-D.ietf-oauth-security-topics]]. By leveraging these well-vetted standards, this approach avoids introducing novel security vulnerabilities that a new protocol might create.
@@ -196,4 +197,8 @@ This document has no IANA actions.
 [I-D.ietf-oauth-security-topics] Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett, "OAuth 2.0 Security Best Current Practice", Work in Progress, Internet-Draft, draft-ietf-oauth-security-topics-27, 10 October 2024, <https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-27>.
 
 [OAS] OpenAPI Initiative, "OpenAPI Specification", Version 3.1.0, 15 February 2021, <https://spec.openapis.org/oas/v3.1.0>.
----
+
+--- back
+
+# Acknowledgments
+{:numbered="false"}
