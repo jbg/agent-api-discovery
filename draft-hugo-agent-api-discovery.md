@@ -57,11 +57,11 @@ Agent-API interaction faces several challenges:
 - **Authentication Inconsistency**: Different APIs use various authentication mechanisms without standardized discovery
 - **Vendor Lock-in**: Proprietary solutions create dependencies on specific platforms or protocols
 
-While solutions like the Model Context Protocol {{?MCP}} have gained popularity, they introduce new protocols and create additional complexity in the ecosystem. These challenges make it difficult for AI agents to dynamically interact with the diverse ecosystem of existing APIs, limiting their effectiveness and creating barriers to interoperability.
+While solutions like the Model Context Protocol {{MCP}} have gained popularity, they introduce new protocols and create additional complexity in the ecosystem. These challenges make it difficult for AI agents to dynamically interact with the diverse ecosystem of existing APIs, limiting their effectiveness and creating barriers to interoperability.
 
 ## Solution Approach
 
-This document proposes a composable approach that leverages existing Internet standards rather than introducing new protocols. By combining api-catalog {{!RFC9727}}, OpenAPI {{?OAS}}, and OAuth 2.0 {{?RFC6749}} with its discovery mechanisms {{!RFC8414}}, this approach provides a robust, decentralized solution that avoids vendor lock-in and reduces complexity.
+This document proposes a composable approach that leverages existing Internet standards rather than introducing new protocols. By combining api-catalog {{!RFC9727}}, OpenAPI {{OAS}}, and OAuth 2.0 {{?RFC6749}} with its discovery mechanisms {{!RFC8414}}, this approach provides a robust, decentralized solution that avoids vendor lock-in and reduces complexity.
 
 The core capabilities required by an agent can be broken down into three stages:
 
@@ -89,7 +89,7 @@ This approach enables agents to systematically discover APIs across the Web with
 
 ## Description with OpenAPI Specification
 
-Once an agent has discovered an API through the catalog mechanism described in Section 1, it needs to understand the API's capabilities, parameters, and data structures. The OpenAPI Specification {{?OAS}} provides a standardized, machine-readable format for this purpose.
+Once an agent has discovered an API through the catalog mechanism described in Section 1, it needs to understand the API's capabilities, parameters, and data structures. The OpenAPI Specification {{OAS}} provides a standardized, machine-readable format for this purpose.
 
 ### OpenAPI Document Discovery
 
